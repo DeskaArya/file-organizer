@@ -19,6 +19,22 @@ const categories = {
     archive: {
         extensions: ['.zip', '.rar', '.7z', '.tar', '.gz'],
         folder: path.join(downloadsFolder, 'archive')
+    },
+    programs: {
+        extensions: ['.exe', '.msi', '.apk', '.dmg', '.pkg', '.deb'],
+        folder: path.join(downloadsFolder, 'programs')
+    },
+    Audio: {
+        extensions: ['.mp3', '.wav', '.aac', '.flac', '.ogg', '.m4a'],
+        folder: path.join(downloadsFolder, 'audio')
+    },
+    Video: {
+        extensions: ['.mp4', '.mkv', '.avi', '.mov', '.wmv', '.flv'],
+        folder: path.join(downloadsFolder, 'video')
+    },
+    ISO: {
+        extensions: ['.iso'],
+        folder: path.join(downloadsFolder, 'iso')
     }
 };
 
@@ -37,9 +53,9 @@ console.log(`[START] Menonton folder: ${downloadsFolder}`);
 const watcher = chokidar.watch(downloadsFolder, {
     ignored: /(^|[\/\\])\../, // Abaikan file tersembunyi
     persistent: true,
-    depth: 0, // Hanya memonitor folder utama, bukan sub-folder (untuk menghindari loop tanpa akhir)
+    depth: 0, 
     awaitWriteFinish: {
-        stabilityThreshold: 2000, 
+        stabilityThreshold: 2000,
         pollInterval: 100
     }
 });
@@ -64,7 +80,7 @@ watcher.on('add', (filePath) => {
 
     if (targetFolder) {
         const destPath = path.join(targetFolder, fileName);
-        
+
         // Pindahkan file
         fs.rename(filePath, destPath, (err) => {
             if (err) {

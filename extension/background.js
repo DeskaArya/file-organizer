@@ -2,7 +2,11 @@
 const categories = {
   files: ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'csv', 'txt'],
   images: ['jpg', 'jpeg', 'png', 'webp', 'gif', 'svg', 'avif'],
-  archive: ['zip', 'rar', '7z', 'tar', 'gz']
+  archive: ['zip', 'rar', '7z', 'tar', 'gz'],
+  programs: ['exe', 'msi', 'apk', 'dmg', 'pkg', 'deb'],
+  audio: ['mp3', 'wav', 'aac', 'flac', 'ogg', 'm4a'],
+  video: ['mp4', 'mkv', 'avi', 'mov', 'wmv', 'flv'],
+  iso: ['iso']
 };
 
 function getFolderForExtension(ext) {
