@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Download File Organizer",
+  "version": "1.0.0",
+  "description": "Ekstensi Chromium untuk secara otomatis menyortir file ke dalam folder berdasarkan tipe filenya saat diunduh.",
+  "permissions": [
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

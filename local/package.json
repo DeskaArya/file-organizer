@@ -1,0 +1,12 @@
+{
+  "name": "local-file-organizer",
+  "version": "1.0.0",
+  "description": "Script Node.js untuk memonitor dan memindahkan file di folder Download secara otomatis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0"
+  }
+}
